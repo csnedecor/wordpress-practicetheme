@@ -24,9 +24,6 @@
 <!-- Font-Awesome -->
 <link href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-<!-- Custom CSS -->
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/custom.css">
-
 <!-- Google Fonts -->
 <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
 
