@@ -17,20 +17,22 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-  <!-- BOOTSTRAP CORE CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+<!-- BOOTSTRAP CORE CSS -->
+<!-- Get the stylesheets from within the theme folder, not the root.  It uses WP's "bloginfo('stylesheet_directory')/" so these links will work whether you're on localhost or production. -->
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/bootstrap.min.css">
 
-  <!-- Font-Awesome -->
-  <link href="assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<!-- Font-Awesome -->
+<link href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+<!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/custom.css">
 
-  <!-- Google Fonts -->
-  <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-  <!-- TypeKit Fonts -->
-  <script src="https://use.typekit.net/jiy7klb.js"></script>
-  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+<!-- Google Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+
+<!-- TypeKit Fonts -->
+<script src="https://use.typekit.net/jiy7klb.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 
 <?php wp_head(); ?>
