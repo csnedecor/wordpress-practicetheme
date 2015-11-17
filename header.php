@@ -41,14 +41,18 @@
             </button>
               <a class="navbar-brand" href="/"><img src="assets/img/logo.png" alt="Bootstrap to WordPress"></a>
           </div><!-- navbar-header -->
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="/">Home</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="resources.html">Resources</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul><!-- nav -->
-          </div><!-- navbar-collapse -->
+
+					<?php
+						wp_nav_menu( array(
+
+							'theme_location'  => 'primary', //menu will show when "primary" wordpress menu is set
+							'container'				=> 'nav',
+							'container_class'	=> 'navbar-collapse collapse',
+							'menu_class'			=> 'nav navbar-nav navbar-right'
+
+							));
+					?>
+
         </div><!-- container -->
       </div><!-- navbar -->
 
