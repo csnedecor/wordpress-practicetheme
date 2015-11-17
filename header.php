@@ -17,6 +17,22 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+  <!-- BOOTSTRAP CORE CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+  <!-- Font-Awesome -->
+  <link href="assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+
+  <!-- Google Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+  <!-- TypeKit Fonts -->
+  <script src="https://use.typekit.net/jiy7klb.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+
 <?php wp_head(); ?>
 </head>
 
