@@ -3,6 +3,17 @@
   Template Name: Home Page
  */
 
+//Custom fields
+//syntax for get_post_meta: page_id (integer), name of custom field(string), whether or not to return a single value (boolean, default: false)
+//Note: To add custom fields to wordpress dashboard: go to this page, click screen options, make sure "custom fields" is checked. Scroll to bottom, click "add custom field" and add variables.
+$prelaunch_price    = get_post_meta( 7, 'prelaunch_price', true );
+$launch_price       = get_post_meta( 7, 'launch_price', true );
+$final_price        = get_post_meta( 7, 'final_price', true );
+$course_url         = get_post_meta( 7, 'course_url', true );
+$button_text        = get_post_meta( 7, 'button_text', true );
+$optin_text         = get_post_meta( 7, 'optin_text', true);
+$optin_button_text  = get_post_meta( 7, 'optin_button_text', true);
+
 get_header(); ?>
   <!-- HERO -->
   <section id="hero" data-type="background" data-speed="5">
@@ -21,24 +32,24 @@ get_header(); ?>
               <div class="price active">
                 <h4>Pre-Launch Price <small>Ends soon</small></h4>
 
-                <span>$149</span>
+                <span><?php echo $prelaunch_price; ?></span>
               </div><!-- price -->
 
               <div class="price">
                 <h4>Launch Price <small>Coming soon!</small></h4>
 
-                <span>$299</span>
+                <span><?php echo $launch_price; ?></span>
               </div><!-- price -->
 
               <div class="price">
                 <h4>Final Price <small>Coming soon!</small></h4>
 
-                <span>$399</span>
+                <span><?php echo $final_price; ?></span>
               </div><!-- price -->
 
             </div><!-- price-timeline -->
 
-            <p><a class="btn btn-lg btn-danger" href="/" role="button">Enroll &raquo;</a></p>
+            <p><a class="btn btn-lg btn-danger" href="<?php echo $course_url ?>" role="button"><?php echo $button_text ?></a></p>
 
           </div><!-- col -->
 
@@ -53,11 +64,11 @@ get_header(); ?>
       <div class="row">
 
         <div class="col-sm-8">
-          <p class="lead"><strong>Subscribe to our mailing list</strong> We'll send you something special as a thank you.</p>
+          <p class="lead"><?php echo $optin_text ?></p>
         </div><!-- col -->
         <div class="col-sm-4">
           <button class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal">
-            Click here to subscribe
+            <?php echo $optin_button_text ?>
           </button>
         </div><!-- col -->
       </div><!-- row -->
