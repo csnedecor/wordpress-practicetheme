@@ -999,6 +999,11 @@ button[type="submit"]:hover{
   }
 }
 
+@media screen and (max-width: 782px) {
+	.logged-in .navbar-fixed-top{
+		top: 46px;
+	}
+}
 @media screen and (max-width : 768px ) {
   .logo{
     width: 50%;
