@@ -14,8 +14,8 @@ get_header(); ?>
           </div> <!-- col -->
 
           <div class="col-sm-7 hero-text">
-            <h1>Bootstrap to WordPress</h1>
-            <p class="lead">Make Your Own Responsive, Custom WordPress Theme</p>
+            <h1><?php bloginfo('name'); ?></h1>
+            <p class="lead"><?php bloginfo('description'); ?></p>
 
             <div id="price-timeline">
               <div class="price active">
