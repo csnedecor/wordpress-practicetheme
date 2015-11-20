@@ -28,6 +28,10 @@ $who_feature_image        = get_field('who_section_image');
 $who_section_title        = get_field('who_section_title');
 $who_section_body         = get_field('who_section_body');
 
+$features_section_image   = get_field('features_section_image');
+$features_section_title   = get_field('features_section_title');
+$features_section_body   = get_field('features_section_body');
+
 get_header(); ?>
   <!-- HERO -->
   <section id="hero" data-type="background" data-speed="5">
@@ -151,44 +155,32 @@ get_header(); ?>
     <div class="container">
 
       <div class="section-header">
-        <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-rocket.png" alt="Rocket">
-        <h2>Course Features</h2>
+        <?php if( !empty($features_section_image) ) : ?>
+
+          <img src="<?php echo $features_section_image['url']; ?>" alt="<?php echo $features_section_image['alt']; ?>">
+        <?php endif ?>
+
+        <h2><?php echo $features_section_title; ?></h2>
+
+        <?php if( !empty($features_section_body) ) : ?>
+          <p class="lead"><?php echo $features_section_body; ?></p>
+        <?php endif; ?>
       </div>
 
       <div class="row">
-        <div class="col-sm-2">
-          <i class="ci ci-computer"></i>
-          <h3>Lifetime access to 80+ lectures</h3>
+        <!-- Created custom post type using Custom Post Type UI, then added custom field radio button to the post type that allows user to choose which icon to use (computer, instructor, watch etc.), then replaces the <i class> with ci ci-computer or ci ci-watch etc to correspond to the correct CSS classes. Syntax for radio buttons in advanced custom field: ci ci-computer : Computer -->
 
-        </div><!-- col -->
-        <div class="col-sm-2">
-          <i class="ci ci-watch"></i>
-          <h3>10+ hours of HD video content</h3>
+        <?php $loop = new WP_Query(array( 'post_type' => 'course_feature', 'order_by' => 'post_id', 'order' => 'ASC')); ?>
 
-        </div><!-- col -->
-        <div class="col-sm-2">
-          <i class="ci ci-calendar"></i>
-          <h3>30 day money back guarantee</h3>
+        <!-- Loop through each course feature in the "course_features" custom post array -->
+        <?php while($loop->have_posts()) : $loop->the_post(); ?>
+          <div class="col-sm-2">
+            <i class="<?php the_field('course_feature_icon'); ?>"></i>
+            <h3><?php the_title(); ?></h3>
 
-        </div><!-- col -->
+          </div><!-- col -->
 
-        <div class="col-sm-2">
-          <i class="ci ci-community"></i>
-          <h3>Access to a community of like-minded students</h3>
-
-        </div><!-- col -->
-
-        <div class="col-sm-2">
-          <i class="ci ci-instructor"></i>
-          <h3>Direct access to the instructor</h3>
-
-        </div><!-- col -->
-
-        <div class="col-sm-2">
-          <i class="ci ci-device"></i>
-          <h3>Accessible content on your mobile device</h3>
-
-        </div><!-- col -->
+        <?php endwhile; ?>
       </div><!-- row -->
 
     </div><!-- container -->

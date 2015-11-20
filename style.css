@@ -914,7 +914,7 @@ i.ci {
   display: inline-block;
   height: 40px;
   width: 40px;
-  background: url('/img/icon-sprite.png') no-repeat;
+  background: url('assets/img/icon-sprite.png') no-repeat;
 }
 .ci.ci-computer{
   background-position: 0 0;
