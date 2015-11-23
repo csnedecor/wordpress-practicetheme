@@ -3,9 +3,6 @@
   Template Name: Home Page
  */
 
-$video_featurette_title   = get_field('video_featurette_title');
-$video_featurette_video   = get_field('video_featurette_youtube_video');
-
 $instructor_section_title = get_field('instructor_section_title');
 $instructor_name = get_field('instructor_name');
 $bio_excerpt = get_field('bio_excerpt');
@@ -32,17 +29,7 @@ get_header(); ?>
 
   <?php get_template_part( 'template-parts/content', 'project-features'); ?>
 
-  <!-- VIDEO FEATURETTE -->
-  <section id="featurette">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <h2><?php echo $video_featurette_title ?></h2>
-          <iframe width="100%" height="415" src="<?php echo $video_featurette_video ?>" frameborder="0" allowfullscreen></iframe>
-        </div><!-- end col -->
-      </div><!-- row -->
-    </div><!-- container -->
-  </section><!-- featurette -->
+  <?php get_template_part( 'template-parts/content', 'video-featurette'); ?>
 
   <!-- INSTRUCTOR -->
   <!-- Used Advanced custom fields for instructor section -->
