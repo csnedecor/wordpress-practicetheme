@@ -49,24 +49,7 @@ get_header(); ?>
 
   <?php get_template_part( 'template-parts/content', 'hero'); ?>
 
-  <!-- OPT-IN SECTION -->
-  <section id="optin">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-sm-8">
-          <p class="lead"><?php echo $optin_text ?></p>
-        </div><!-- col -->
-        <div class="col-sm-4">
-          <button class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal">
-            <?php echo $optin_button_text ?>
-          </button>
-        </div><!-- col -->
-      </div><!-- row -->
-
-    </div><!-- container -->
-
-  </section><!-- optin -->
+  <?php get_template_part( 'template-parts/content', 'optin'); ?>
 
   <!-- BOOST YOUR INCOME -->
 
