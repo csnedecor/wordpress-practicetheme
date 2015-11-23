@@ -36,7 +36,7 @@
 
         </div><!-- col -->
 
-      <?php endwhile; ?>
+      <?php endwhile; wp_reset_query(); ?>
     </div><!-- row -->
 
   </div><!-- container -->
