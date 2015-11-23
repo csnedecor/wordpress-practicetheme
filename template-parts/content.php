@@ -25,6 +25,9 @@
         	<!-- comments_number syntax: comments_number($zero, $one, $more) where $zero is what you want to display if there are 0 comments. Default values are $zero: "No Comments", $one: "One Comment", $more: "X Comments" -->
           <a href=""><i class="fa fa-comments"></i> <?php comments_number( 0, 1, "%"); ?><!-- percent sign pulls in the number of comments --></a>
         </div><!-- post-comments-badge -->
+
+        <!-- Add link to allow author to edit from page. Syntax:  edit_post_link($text, $before_text, $after_text)-->
+        <div><?php edit_post_link("Edit", "<div><i class='fa fa-pencil'></i>", "</div>"); ?></div>
       </div><!-- post-details -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
