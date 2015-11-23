@@ -32,14 +32,12 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-  <div class="post-image">
-    <img src="assets/img/hero-bg.jpg">
-  </div><!-- post-image -->
+	<?php if ( has_post_thumbnail() ) { //check for featured image?>
+	  <div class="post-image">
+	    <?php the_post_thumbnail(); ?>
+	  </div><!-- post-image -->
+	<?php } ?>
   <div class="post-excerpt">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt... <a href="post.html">continue reading &raquo;</a></p>
+    <?php the_excerpt(); ?>
   </div><!-- post-excerpt -->
-
-	<footer class="entry-footer">
-		<?php bootstrap2wordpress_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
