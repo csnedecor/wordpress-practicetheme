@@ -40,7 +40,7 @@ get_header();
 
           <?php while($loop->have_posts()) : $loop->the_post(); ?>
 
-            <!-- can only access these variables within the loop. If they were defined outside of it, we couldn't access them here. -->
+            <!-- can only access these Advanced Custom Fields variables within the loop. If they were defined outside of it, we couldn't access them here. -->
             <?php
               $resource_image   = get_field('resource_image');
               $resouce_url      = get_field('resource_url');
