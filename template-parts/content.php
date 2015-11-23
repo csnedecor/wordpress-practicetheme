@@ -15,13 +15,15 @@
 
 		<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="post-details">
-        <i class="fa fa-user"></i> Brad Hussey
-        <i class="fa fa-clock-o"></i> <time>August 7, 2014</time>
-        <i class="fa fa-folder"></i> <a href="">Tutorials</a>, <a href="">Coding</a>
-        <i class="fa fa-tags"></i> Tagged <a href="">wordpress</a>, <a href="">premium</a>, <a href="">another tag</a>, <a href="">yadda yadaa</a>
+        <i class="fa fa-user"></i> <?php the_author(); ?>
+        <i class="fa fa-clock-o"></i> <time><?php the_date(); ?></time>
+        <i class="fa fa-folder"></i> <?php the_category(", "); ?> <!--list the categories separated by a comma. -->
+        <i class="fa fa-tags"></i> <?php the_tags(); ?> <!-- list the tags -->
 
         <div class="post-comments-badge">
-          <a href=""><i class="fa fa-comments"></i> 168</a>
+
+        	<!-- comments_number syntax: comments_number($zero, $one, $more) where $zero is what you want to display if there are 0 comments. Default values are $zero: "No Comments", $one: "One Comment", $more: "X Comments" -->
+          <a href=""><i class="fa fa-comments"></i> <?php comments_number( 0, 1, "%"); ?><!-- percent sign pulls in the number of comments --></a>
         </div><!-- post-comments-badge -->
       </div><!-- post-details -->
 		<?php endif; ?>
