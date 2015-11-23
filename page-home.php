@@ -3,10 +3,6 @@
   Template Name: Home Page
  */
 
-$who_feature_image        = get_field('who_section_image');
-$who_section_title        = get_field('who_section_title');
-$who_section_body         = get_field('who_section_body');
-
 $features_section_image   = get_field('features_section_image');
 $features_section_title   = get_field('features_section_title');
 $features_section_body    = get_field('features_section_body');
@@ -37,29 +33,7 @@ get_header(); ?>
 
   <?php get_template_part( 'template-parts/content', 'boost'); ?>
 
-  <!-- WHO BENEFITS -->
-  <section id="who-benefits">
-    <div class="container">
-
-      <div class="section-header">
-        <?php if( !empty($who_feature_image) ) : ?>
-
-          <img src="<?php echo $who_feature_image['url']; ?>" alt="<?php echo $who_feature_image['alt']; ?>">
-        <?php endif ?>
-
-        <h2><?php echo $who_section_title; ?></h2>
-      </div><!-- section-header -->
-
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-
-          <?php echo $who_section_body; ?>
-
-        </div><!-- end col -->
-      </div><!-- row -->
-
-    </div><!-- container -->
-  </section><!-- who-benefits -->
+  <?php get_template_part( 'template-parts/content', 'who'); ?>
 
   <!-- COURSE FEATURES -->
   <section id="course-features">
