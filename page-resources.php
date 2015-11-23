@@ -27,9 +27,9 @@ $thumbnail_url    = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
     <div id="content" class="col-sm-12">
 
       <section class="main-content">
-        <p class="lead">Welcome to the Bootstrap to WordPress resources page! On this page, I will provide you with useful resources, plugins, tools, applications, and websites to help make your life as a coder a little bit easier. <strong>I recommend adding this page to your bookmarks for convenient future reference.</strong></p>
-
-        <p><em>Please keep in mind that some of the following resources are my affiliate links, and should you decide to make a purchase, I will earn a small commission &mdash; at no extra cost to you! I am recommending these resources only because I have found them to be incredibly helpful. Don&rsquo;t spend your money on any products or resources unless you think they will benefit you.</em></p>
+        <?php while( have_posts() ) : the_post(); ?>
+          <?php the_content(); ?>
+        <?php endwhile; ?>
 
         <hr>
 
